@@ -1,15 +1,20 @@
-const https = require('request');
+const request = require('request');
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-console.log(process.env);
-/*
+const config = yaml.safeLoad(fs.readFileSync('./config.yml', 'utf8'));
+
 const options = {
-  url: `https://slack.com/api/channels.history?token=${token}&channel=${channel}&count=1000`,
+  url: `https://slack.com/api/channels.history?token=${config.token}&channel=${config.channel}&count=1000`,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   }
 };
 
 request(options, (error, response, body) => {
-
+  const res = JSON.parse(body);
+  const messages = res.messages;
+  messages.reverse().forEach((message) => {
+    console.log(message.text);
+  });
 });
-*/
