@@ -1,0 +1,14 @@
+{
+  "name": "slack-to-scrapbox",
+  "version": "1.0.0",
+  "description": "App to move lack channel history messages to scrapbox",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kawakawaryuryu",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
